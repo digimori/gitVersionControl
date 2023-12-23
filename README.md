@@ -73,3 +73,71 @@ git remote add origin <url>
 git push -u origin main // Links up local and remote repositories and pushes local commits to it
 ```
 
+- The main branch is your main branch of commits, which are like save points.
+
+## Gitignore:
+
+- Choose which files that you do not want tracked
+- This is especially useful to not commit big, unnecessary folders (like node modules), or secret keys(API, passwords etc)
+- .DS_Store files often end up committed from locals and they're not necessary here and so can be ignored.
+
+Create the gitignore file:
+
+```
+touch .gitignore
+```
+
+- Inside gitignore, name the files and folders that you want ignored and not pushed. eg:
+
+```
+.DS_Store
+.env // This is usually where secret keys are kept
+secrets.txt
+*.log // * This wildcard means that everything with this file extension will be ignored, ie: filename.log, file2.log
+```
+
+- If you do accidentally commit (not push) a file, this can be removed before it makes it to github:
+
+```
+git rm --cached -r . // This will remove everything from the staging area
+```
+
+## Git Cloning
+
+- Cloning a remote repository to use as a local repository on your desktop:
+
+```
+git clone <url>
+```
+
+- This will pull all commits and branches from the repo
+- Often used to build on existing code (Using a copy)
+
+- This will need to be installed in order to also use the dependencies needed:
+
+```
+cd repoRootFolder
+npm install
+```
+
+- If using someone elses open source, there will usually be documentation on the steps that follow this (ie if you need to add scripts or echos, also the commands to open the server)
+
+## Pull Requests, branching and merging:
+
+- Branches are offshoots from the main branch. They can be used, for example, for experimentation without committing to the main.
+
+```
+git branch name-of-branch
+```
+
+- You'll usually be working on branches in a dev environment, and then when you've completed the code in the background, can perform a merge request, like so:
+
+```
+git checkout main // Takes you back to the main branch
+git merge name-of-branch
+:q! // Save and quit
+git push origin main -u // Push the changes upto the main
+```
+
+- The previous branch will still exist, but the changes will now be absorbed from the branch to the main
+- Prevents breaking of the main branch whilst experimenting with other features
