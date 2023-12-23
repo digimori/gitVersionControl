@@ -54,3 +54,22 @@ git log
 ```
 
 - This will give the hash (unique identifier for the commit), author of the commit and the date/time that it was committed along with the files.
+
+- Revert changes in the local directory:
+
+```
+git diff <filename> // Shows changes
+git checkout <filename> // This will revert to the previous committed version (Not pushed! This is different!)
+```
+
+## Git Remote Repositories:
+
+- Create Repository on Github
+- Copy the URL of the Repo that you want to use remotely
+- Use the command line:
+
+```
+git remote add origin <url>
+git push -u origin main // Links up local and remote repositories and pushes local commits to it
+```
+
