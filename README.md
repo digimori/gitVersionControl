@@ -141,3 +141,16 @@ git push origin main -u // Push the changes upto the main
 
 - The previous branch will still exist, but the changes will now be absorbed from the branch to the main
 - Prevents breaking of the main branch whilst experimenting with other features
+
+## Forking and Pull Requests:
+
+Forking:
+
+- Copying a remote repository to work on it yourself to your own github account, not the same as cloning where it is cloned to a local repository
+- Once there is a remote copy, this can then be cloned to your local repository in order to work on it yourself
+
+Pull Request:
+
+- If someone forks a repository, makes changes and then wants to add them back to the original repo, they can make a pull request
+- These are like suggested changes where the original owner can decide if they want the changes made by the person who forked the repo merged into their work
+- So, in essence, you "pull" those changes over to the original code and can merge the repos
